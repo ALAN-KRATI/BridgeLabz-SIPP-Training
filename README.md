@@ -47,13 +47,13 @@ Each entry includes concepts covered, skills practiced, and links to the exact c
 
 ---
 
-### 📅 17/06/25 (Tue) – Day 7 – Java Built-In Functions  
+### 📅 17/06/25 - 18/06/25 (Tue - Wed) – Day 7 – Java Built-In Functions  
 **Topics**: Working with built-in Java libraries: `Math` (rounding, powers, roots), `Arrays` utility class, and basic intro to `Collections`  
 🔗 [Code](https://github.com/ALAN-KRATI/BridgeLabz-SIPP-Training/tree/CORE-JAVA/JAVA-BUILTIN-FUNCTIONS)
 
 ---
 
-### 📅 19/06/25 (Wed) – Day 8 – Java String Handling  
+### 📅 19/06/25 (Thu) – Day 8 – Java String Handling  
 **Topics**: Mutable vs immutable strings, `StringBuilder` & `StringBuffer`, performance comparison, string reversal and manipulation  
 🔗 [Code](https://github.com/ALAN-KRATI/BridgeLabz-SIPP-Training/tree/CORE-JAVA/JAVA-STRING-HANDLING)
 
@@ -61,19 +61,19 @@ Each entry includes concepts covered, skills practiced, and links to the exact c
 
 ## OOPS Branch 🧱
 
-### 📅 20/06/25 (Thu) – Day 1 – Classes & Objects  
+### 📅 20/06/25 (Fri) – Day 1 – Classes & Objects  
 **Topics**: Defining classes, creating objects, class structure, encapsulating data, real-world object modeling in Java  
 🔗 [Code](https://github.com/ALAN-KRATI/BridgeLabz-SIPP-Training/tree/OOPS/JAVA-CLASS-OBJECTS)
 
 ---
 
-### 📅 23/06/25 (Fri) – Day 2 – Constructors, Variables, Modifiers  
+### 📅 23/06/25 (Mon) – Day 2 – Constructors, Variables, Modifiers  
 **Topics**: Constructor types (default, parameterized, overloaded), use of `this` keyword, instance vs static variables, and access modifiers  
 🔗 [Code](https://github.com/ALAN-KRATI/BridgeLabz-SIPP-Training/tree/OOPS/JAVA-CONSTRUCTORS-VARIABLES-MODIFIERS)
 
 ---
 
-### 📅 24/06/25 (Mon) – Day 3 – Java Keywords  
+### 📅 24/06/25 (Tue) – Day 3 – Java Keywords  
 **Topics**: Deep dive into important Java keywords: `static`, `final`, `this`, and `instanceof`, with practical examples for each  
 🔗 [Code](https://github.com/ALAN-KRATI/BridgeLabz-SIPP-Training/tree/OOPS/JAVA-KEYWORDS)
 
