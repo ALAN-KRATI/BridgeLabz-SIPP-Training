@@ -1,8 +1,5 @@
 # 🧠 BridgeLabz SIPP Training - Daily Progress Tracker 💻🔥
 
-**Start Date**: 📅 **09/06/25 (Monday)**  
-**Note**: Weekends (Saturday & Sunday) are excluded from the training log.
-
 Welcome to my `BridgeLabz-SIPP-Training` repo!  
 This README serves as a central log of my daily progress across different topics, branches, and Java modules.  
 Each entry includes concepts covered, skills practiced, and links to the exact code in their respective branches.
