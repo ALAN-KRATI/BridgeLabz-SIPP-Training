@@ -8,14 +8,14 @@ class ReorderLinkedList {
     public static void reorderList(ListNode head) {
         if (head == null || head.next == null) return;
 
-        // Find middle
+      
         ListNode slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
 
-        // Reverse second half
+        
         ListNode prev = null, curr = slow.next;
         slow.next = null;
         while (curr != null) {
@@ -25,7 +25,7 @@ class ReorderLinkedList {
             curr = nextTemp;
         }
 
-        // Merge two halves
+       
         ListNode first = head, second = prev;
         while (second != null) {
             ListNode tmp1 = first.next;
