@@ -171,6 +171,12 @@ Each entry includes concepts covered, skills practiced, and links to the exact c
 
 ---
 
+### 📅 23/07/25 (Wed) – Day 2 – Collections 
+**Topics**:  List Interface and Implementing Classes, Set Interface and Implementing Classes, Queue and Deque Interfaces, Map Interface and Its Implementations, Comparison of Different Implementations, Real-World Use Cases and Best Practices.
+🔗 [Code](https://github.com/ALAN-KRATI/BridgeLabz-SIPP-Training/tree/Generics/Collection-1)
+
+---
+
 ## Workshop Branch
 
 Ocassionally practice problems done in class on board on the concept studied in the class. This is to ensure that the student is able to apply the concept to solve problems
