@@ -1,0 +1,16 @@
+Start
+Create an enum called TrafficLight with values: RED, GREEN, YELLOW
+
+Create a class called TrafficController
+    Has a variable: currentLight
+
+    Method switchLight:
+        If currentLight is RED → change to GREEN
+        If currentLight is GREEN → change to YELLOW
+        If currentLight is YELLOW → change to RED
+
+    Method run:
+        Loop every few seconds
+            Call switchLight
+            Print current light
+End
