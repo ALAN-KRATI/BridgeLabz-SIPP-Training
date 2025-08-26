@@ -1,0 +1,11 @@
+Pseudo-code: Online Exam Portal (OOPs)
+1. Define class User with attributes: username, password
+2. Define method login() in User for generic login
+3. Define subclass Student inheriting User
+   - Override login(): check student credentials and course enrollment
+4. Define subclass Admin inheriting User
+   - Override login(): check admin credentials and privileges
+5. Create Student object with username/password, call login()
+6. If valid → display exams
+7. Create Admin object with username/password, call login()
+8. If valid → display exam management tools
