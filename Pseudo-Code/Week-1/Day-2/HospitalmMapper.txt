@@ -1,0 +1,15 @@
+Start
+Make class Doctor
+    Has name and specialization
+
+Create map: departmentName → list of doctors
+
+Function getDoctorsBySpecialization(specialization):
+    Create empty list: result
+
+    For each department:
+        For each doctor:
+            If doctor’s specialization matches
+                Add to result
+    Return result
+End

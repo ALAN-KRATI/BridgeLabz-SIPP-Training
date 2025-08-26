@@ -1,0 +1,11 @@
+Start
+Make a class Job with:
+    jobId, deadline, processingTime
+
+Create a priority queue
+    Job with earliest deadline and shortest time has higher priority
+
+While the queue is not empty:
+    Take out highest priority job
+    Print jobId
+End

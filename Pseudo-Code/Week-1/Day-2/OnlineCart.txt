@@ -1,0 +1,17 @@
+Start
+Make class Item
+    Has name and price
+
+Create a list of Items (cart)
+
+Make a method calculateTotal(cart)
+    Set total = 0
+    For each item in cart
+        Add item price to total
+    Return total
+
+In main:
+    Add some items to cart
+    Call calculateTotal
+    Print total
+End

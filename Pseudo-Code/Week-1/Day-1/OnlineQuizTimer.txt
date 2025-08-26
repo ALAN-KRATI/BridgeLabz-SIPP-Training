@@ -1,0 +1,13 @@
+Start
+Create array for timeSlots (one for each question)
+
+For each question:
+    Set timer to fixed time (e.g., 30 seconds)
+
+    While timer > 0
+        If timer is less than or equal to 5
+            Show warning: "Hurry up!"
+        Decrease timer by 1 each second
+    End While
+End For
+End
