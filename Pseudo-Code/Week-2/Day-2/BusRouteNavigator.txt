@@ -1,0 +1,15 @@
+Pseudo-code: Bus Route Navigator
+
+1. Create LinkedList to store bus stops
+2. Insert stops in initial order
+3. To add stop:
+   a. Insert node at correct position
+4. To remove stop:
+   a. Traverse list, delete node if matches stop name
+5. To search stop:
+   a. Traverse list, check if stop exists
+6. Example run:
+   a. Initial route = Depot → Main Street → City Mall → Hospital → Airport
+   b. Add University Stop after City Mall
+   c. Remove Hospital
+   d. Search for Airport, confirm exists
