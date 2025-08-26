@@ -1,0 +1,11 @@
+Pseudo-code: Movie Ticket Booking
+1. Define class Ticket with attributes: movieName, seatNumber, price, bookingStatus
+2. Define class Theatre with attributes: movieSchedule, availableSeats, ticketList
+   - Method issueTicket(movie, seat): create Ticket if seat available
+   - Method cancelTicket(ticket): update seat availability and ticket status
+3. Define class Customer with attributes: name, bookedTickets
+   - Method bookTicket(theatre, movie, seat)
+   - Method cancelTicket(theatre, ticket)
+4. Create Customer object (e.g., Ravi)
+5. Customer books ticket: Theatre issues ticket, updates seat map
+6. Customer cancels ticket: Theatre updates seat availability
