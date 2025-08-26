@@ -1,0 +1,32 @@
+Title: Distributed Load Balancer – Queue Simulation (Round-Robin with Dynamic Nodes)
+
+1. Initialize
+   - serversQueue = Queue(S1, S2, S3)
+   - requestCount = N
+
+2. Process Requests
+   - For i from 1 to N:
+     a. If serversQueue is empty -> print "No servers available" and break
+     b. server = serversQueue.peek()
+     c. Assign Request Ri -> server
+     d. Move server to back:
+        i. serversQueue.poll()
+        ii. serversQueue.offer(server)
+     e. If at specific i, perform dynamic updates:
+        i. Add new server S4 at step k: serversQueue.offer(S4)
+        ii. Remove failing server Sx: remove Sx from queue (linear scan or auxiliary set)
+
+3. Removal Logic
+   - removeServer(target):
+     a. tempQueue = empty
+     b. While serversQueue not empty:
+        i. s = serversQueue.poll()
+        ii. If s != target -> tempQueue.offer(s)
+     c. serversQueue = tempQueue
+
+4. Output
+   - Print mapping: Ri -> AssignedServer for all i
+
+5. Guarantees
+   - Round-robin maintained by rotating front to back
+   - Dynamic add/remove supported between requests
