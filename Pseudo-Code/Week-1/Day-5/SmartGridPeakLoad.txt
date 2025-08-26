@@ -1,0 +1,29 @@
+Title: Smart Grid Energy Usage Tracker (Zone/Day Peak Load via Streams)
+
+1. Data Model
+   - Zone: String
+   - Day: LocalDate
+   - Reading: double (kW)
+   - Data: Map<Zone, Map<Day, List<Reading>>>
+
+2. Compute Peak Load
+   - For each zone in data:
+     a. For each day in zoneMap:
+        i. dayPeak = max(readings for that day)
+        ii. Record (zone, day) -> dayPeak
+
+3. Aggregation with Streams (conceptual)
+   - result = data.entrySet().stream()
+       .flatMap(zoneEntry -> zoneEntry.value.entrySet().stream()
+           .map(dayEntry -> ((zoneEntry.key, dayEntry.key, max(dayEntry.value)))))
+       .collect(toList or toMap((zone, day) -> peak))
+
+4. Output
+   - For each zone:
+     a. Print "Zone Z:"
+     b. For each day ordered asc:
+        i. Print "Day D -> Peak P kW"
+
+5. Example
+   - Zone-A, 2025-08-01: [120, 90, 200, 150] -> Peak 200
+   - Zone-B, 2025-08-01: [300, 350, 250] -> Peak 350
