@@ -1,0 +1,11 @@
+Pseudo-code: Simple Word Counter
+1. Input: paragraph string
+2. Split paragraph into words
+3. Convert words to lowercase
+4. Remove punctuation
+5. Use map<word, count> to store frequency
+6. For each word:
+   - If exists in map → increment count
+   - Else → add with count 1
+7. Sort words by frequency
+8. Output list of words with their counts
