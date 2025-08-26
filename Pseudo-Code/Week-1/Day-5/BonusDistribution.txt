@@ -1,0 +1,31 @@
+Title: Employee Bonus Distribution Engine (Streams + Custom Collector)
+
+1. Input
+   - List<Employee> with fields: name, department, rating (1..5), baseSalary
+
+2. Group by Department
+   - groups = employees grouped by department
+
+3. For each department
+   - totalSalary = sum(baseSalary)
+   - pool = 0.10 * totalSalary
+   - totalRating = sum(rating) (ensure > 0; if 0 then equal split or zero payout)
+   - For each employee e in department:
+     a. shareRatio = e.rating / totalRating
+     b. bonus = pool * shareRatio
+     c. Record (dept, e.name) -> bonus
+
+4. Custom Collector Outline
+   - Accumulator per dept: { totalSalary, totalRating, employees[] }
+   - Combiner merges accumulators
+   - Finisher computes pool and per-employee bonuses
+
+5. Output
+   - For each department:
+     a. Print department name and pool
+     b. For each employee sorted by rating desc, name asc:
+        i. Print name -> bonus
+
+6. Example
+   - IT pool = ₹1,00,000
+   - Rating split 5:3:2 -> bonuses ₹50,000, ₹30,000, ₹20,000 respectively
