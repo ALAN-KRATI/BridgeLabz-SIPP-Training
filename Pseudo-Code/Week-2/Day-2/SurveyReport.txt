@@ -1,0 +1,14 @@
+Pseudo-code: Online Survey Report Generator
+
+1. Define class SurveyResponse with fields: restaurantName, rating
+2. Store list of responses
+3. Group responses by restaurantName
+4. For each restaurant, calculate average rating
+5. Print restaurant → average rating
+6. Identify:
+   a. Restaurant with highest average
+   b. Restaurant with lowest average
+7. Example run:
+   PizzaHut → 4.5
+   KFC → 3.5
+   Subway → 4.67
