@@ -1,0 +1,58 @@
+Title: Restaurant POS Billing System (Taxes + Discounts via Polymorphism)
+
+1. Define Interface: TaxCalculator
+   - Method: computeTax(item) -> double
+
+2. Implement Taxes
+   - FoodTax: tax = 0.05 * basePrice
+   - BeverageTax: tax = 0.12 * basePrice
+   - ImportedTax: tax = baseTax(item.type) + customsDuty(item)
+     a. customsDuty = rate * basePrice (configurable)
+   - LuxuryTax (new during festivals): extra = luxuryRate * basePrice
+
+3. Define Interface: DiscountPolicy
+   - Method: apply(subtotal) -> double (returns discounted total)
+
+4. Implement Discounts
+   - NoDiscount: return subtotal
+   - FlatDiscount(amount): return max(0, subtotal - amount)
+   - PercentageDiscount(rate): return subtotal * (1 - rate)
+   - BuyOneGetOne (new scheme): for eligible items, adjust chargeable quantity before tax/after per policy
+
+5. Entities
+   - Item: name, type (FOOD, BEVERAGE, IMPORTED_FOOD, PREMIUM), basePrice, quantity
+   - Bill: list of Item, selected DiscountPolicy
+
+6. Tax Resolution
+   - For each item, pick appropriate TaxCalculator at runtime based on item.type
+   - If PREMIUM and festival -> add LuxuryTax
+
+7. Billing Algorithm
+   - subtotal = 0
+   - For each item in bill:
+     a. effectiveQty = apply BOGO pre-processing if policy requires
+     b. base = basePrice * effectiveQty
+     c. tax = sum of applicable tax calculators for item
+     d. lineTotal = base + tax
+     e. subtotal += lineTotal
+   - totalAfterDiscount = DiscountPolicy.apply(subtotal)
+   - Output line items, subtotal, discount, final total
+
+8. Scenario 1
+   - Items:
+     a. Paneer Tikka (FOOD): FoodTax 5%
+     b. Coke (BEVERAGE): BeverageTax 12%
+     c. Imported Cheese (IMPORTED_FOOD): FoodTax 5% + Customs duty
+   - Discount: 10% off
+   - Compute as per billing algorithm
+
+9. Scenario 2
+   - Introduce BuyOneGetOne without changing billing core:
+     a. Implement new DiscountPolicy or PrePricingPolicy
+     b. Inject it at runtime
+
+10. Scenario 3
+   - Add LuxuryTax for premium items
+     a. Implement new TaxCalculator
+     b. Register via configuration/factory
+     c. No changes in billing logic
