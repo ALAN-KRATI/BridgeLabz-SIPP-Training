@@ -1,0 +1,66 @@
+Title: Healthcare Diagnosis Engine (Strategy Pattern)
+
+1. Define Interface: DiagnosisStrategy
+   - Method: diagnose(symptoms: List<String>) -> List<String>
+
+2. Implement Strategy: RuleBasedDiagnosis
+   - Maintain rules: Map<Set<String>, List<String>>
+   - diagnose(symptoms):
+     a. Normalize symptoms
+     b. For each rule in rules:
+        i. If rule's symptom set ⊆ input symptoms -> add mapped diseases to result
+     c. If result empty -> add "Further tests required"
+     d. Return unique diseases
+
+3. Implement Strategy: AIBasedDiagnosis
+   - diagnose(symptoms):
+     a. Encode symptoms into feature vector
+     b. Load AI model or heuristic scorer
+     c. Predict probabilities for candidate diseases
+     d. Sort by probability
+     e. Return top K diseases by threshold
+
+4. Implement Strategy: ProbabilityBasedDiagnosis
+   - Maintain prior probabilities per disease
+   - Maintain likelihood(symptom|disease)
+   - diagnose(symptoms):
+     a. For each disease:
+        i. score = prior * Π likelihood(s|d) for s in symptoms
+     b. Normalize scores
+     c. Return diseases with score ≥ threshold, sorted desc
+
+5. Define Class: DiagnosisContext
+   - Field: strategy: DiagnosisStrategy
+   - Methods:
+     a. setStrategy(DiagnosisStrategy s)
+     b. runDiagnosis(symptoms) -> strategy.diagnose(symptoms)
+
+6. Runtime Flow
+   - Input symptoms for patient and department
+   - Select strategy by department policy
+   - Use DiagnosisContext to execute
+
+7. Scenarios
+   - Scenario 1 (General Medicine):
+     a. symptoms = [fever, cough, fatigue]
+     b. context.setStrategy(new RuleBasedDiagnosis)
+     c. result -> ["Flu", "COVID-19"] (based on matching rules)
+   - Scenario 2 (Neurology):
+     a. symptoms = [headache, dizziness, nausea]
+     b. context.setStrategy(new AIBasedDiagnosis)
+     c. result -> ["Migraine", "Vertigo"]
+   - Scenario 3 (Add new algorithm without modifying old code):
+     a. Implement class GeneticPatternDiagnosis implements DiagnosisStrategy
+        - diagnose(symptoms):
+          i. Fetch patient genetic markers
+          ii. Match markers + symptoms to disease patterns
+          iii. Return candidate diseases
+     b. At runtime: context.setStrategy(new GeneticPatternDiagnosis) and run
+
+8. Encapsulation
+   - Keep rule sets, models, probabilities private to their strategy classes
+   - Expose only diagnose() via the interface
+
+9. Extensibility
+   - To add a new method, create another class implementing DiagnosisStrategy
+   - No changes required in DiagnosisContext or other existing strategies
