@@ -1,0 +1,18 @@
+Pseudo-code: Parking Lot Ticketing System
+
+1. Define class Vehicle with attributes: vehicleNumber, entryTime
+2. Define method calculateFee(exitTime) in Vehicle
+3. Define subclass Car extending Vehicle
+   a. Override calculateFee(exitTime)
+   b. Base fee = 50, extra = 30/hour after first
+4. Define subclass Bike extending Vehicle
+   a. Override calculateFee(exitTime)
+   b. Base fee = 20, extra = 10/hour after first
+5. Define subclass Truck extending Vehicle
+   a. Override calculateFee(exitTime)
+   b. Base fee = 100, extra = 50/hour after first
+6. Main program:
+   a. On entry, create object based on vehicle type
+   b. Record entry time
+   c. On exit, call calculateFee(exitTime)
+   d. Print vehicle number, type, entry, exit, total fee
