@@ -1,0 +1,42 @@
+Title: Autocomplete Search Suggestions – Trie Implementation
+
+1. Define TrieNode
+   - children: Map<char, TrieNode>
+   - isEnd: boolean
+   - word: String (full word when isEnd = true)
+   - popularity: int (score)
+   - Optional: topSuggestions: MinHeap of (popularity, word) of fixed size for O(1) prefix
+
+2. Initialize
+   - root = new TrieNode()
+
+3. Insert(keyword, score=1)
+   - node = root
+   - For each character c in keyword (lowercased):
+     a. If c not in node.children -> node.children[c] = new TrieNode()
+     b. node = node.children[c]
+     c. Optionally update node.topSuggestions with (score, keyword)
+   - node.isEnd = true
+   - node.word = keyword
+   - node.popularity += score
+
+4. UpdatePopularity(keyword, delta)
+   - Find terminal node for keyword
+   - node.popularity += delta
+   - Rebuild ancestor topSuggestions if maintained
+
+5. Search(prefix, N)
+   - node = traverse root by prefix
+   - If node is null -> return empty list
+   - If using topSuggestions -> return top N from node.topSuggestions sorted desc
+   - Else:
+     a. results = DFS from node collecting (popularity, word) for nodes where isEnd = true
+     b. Sort results by popularity desc, then lexicographically asc
+     c. Return first N words
+
+6. Dynamic Insert
+   - Call Insert(newKeyword) at runtime; results reflect immediately
+
+7. Example
+   - Insert: "pizza hut", "pizza point", "pita bread", "pizzeria"
+   - Search "pi" with N=3 -> return top 3 by popularity
