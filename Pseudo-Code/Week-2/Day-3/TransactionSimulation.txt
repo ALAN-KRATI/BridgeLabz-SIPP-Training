@@ -1,0 +1,24 @@
+Pseudo-code for Payment Transaction Simulation
+
+Step 1: Customer chooses UPI
+1. Start
+2. Customer = Ramesh
+3. Platform = Amazon
+4. Create Transaction<UPI> with UPI ID = ramesh@upi, amount = 1200
+5. Call processPayment()
+6. Display "Payment of ₹1200 via UPI successful for Amazon."
+
+Step 2: Customer uses Credit Card
+1. Customer = Priya
+2. Platform = MakeMyTrip
+3. Create Transaction<Card> with card details, amount = 5000
+4. Call processPayment()
+5. Display "Payment of ₹5000 via Card ending 5432 successful for MakeMyTrip."
+
+Step 3: Business User with NetBanking
+1. User = Company
+2. Bank = HDFC
+3. Create Transaction<NetBanking> with account number 00112233, amount = 8000
+4. Call processPayment()
+5. Display "Payment of ₹8000 via NetBanking (HDFC) successful."
+6. End
