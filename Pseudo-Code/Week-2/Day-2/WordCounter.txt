@@ -1,0 +1,15 @@
+Pseudo-code: Simple Word Counter
+
+1. Input paragraph text
+2. Normalize text: lowercase, remove punctuation
+3. Split text into words
+4. Create empty Map<String, Integer>
+5. For each word:
+   a. If word exists in map, increment count
+   b. Else, put word with count = 1
+6. Print all words with frequency
+7. Example run:
+   Sports → 3
+   bring → 1
+   people → 1
+   teamwork → 1
