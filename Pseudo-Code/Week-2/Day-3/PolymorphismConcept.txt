@@ -1,0 +1,9 @@
+Pseudo-code for Polymorphism in processPayment
+
+1. Define method processPayment()
+2. Implement processPayment differently in each Payment class
+   - UPI → Print success message with UPI ID
+   - Card → Print success message with masked card number
+   - NetBanking → Print success message with bank name
+3. Same method name, different behaviors
+4. Output: Action depends on payment type
