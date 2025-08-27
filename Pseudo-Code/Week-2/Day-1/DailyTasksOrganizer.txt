@@ -1,0 +1,12 @@
+Pseudo-code: Daily Tasks Organizer
+1. Define LinkedHashMap tasks<id, description>
+2. Method addTask(description):
+   - Generate new ID, insert into map
+3. Method removeTask(id):
+   - Remove entry by ID
+4. Method viewTasks():
+   - Traverse map in insertion order, display tasks
+5. Example:
+   - Add: 1→Check emails, 2→Prepare report, 3→Call client
+   - Remove task 2
+   - Remaining: 1→Check emails, 3→Call client
