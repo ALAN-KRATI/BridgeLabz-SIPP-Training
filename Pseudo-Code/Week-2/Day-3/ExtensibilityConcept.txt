@@ -1,0 +1,9 @@
+Pseudo-code for Extensibility in Payment System
+
+1. System currently supports UPI, Card, NetBanking
+2. To add new payment mode (Wallet, Crypto, etc.):
+   - Create new Payment class with its attributes
+   - Implement processPayment() method
+   - Plug into Transaction<T>
+3. Existing code remains unchanged
+4. Output: Flexible and extendable system design
