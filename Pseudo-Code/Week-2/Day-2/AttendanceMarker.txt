@@ -1,0 +1,17 @@
+Pseudo-code: Attendance Marker
+
+1. Create 2D array attendance[students][days]
+2. Each row = student, each column = day
+3. Mark attendance:
+   a. Update array with 1 (present) or 0 (absent)
+4. Daily summary:
+   a. For given day, count 1s in column
+5. Monthly summary:
+   a. For each student, count 1s in row
+6. Defaulter list:
+   a. For each student, if total days < 75% of total days, mark defaulter
+7. Example run:
+   a. Input attendance for day
+   b. Query day 10 → count present
+   c. Query student 5 → count total
+   d. Print list of <75% attendance
