@@ -1,0 +1,14 @@
+Pseudo-code: Bus Route Navigator
+1. Define Node with attribute: stopName, next
+2. Define LinkedList for bus route with head node
+3. Insertion method:
+   - Traverse list, insert new stop at required position
+4. Deletion method:
+   - Traverse list, find stop, remove by updating links
+5. Search method:
+   - Traverse list, check if stopName exists
+6. Example:
+   - Initial: Depot → Main Street → City Mall → Hospital → Airport
+   - Insert University Stop after City Mall
+   - Delete Hospital
+   - Search for Airport → found
