@@ -1,0 +1,10 @@
+Pseudo-code for Encapsulation in Payment Classes
+
+1. Create separate Payment classes (UPI, Card, NetBanking)
+2. Each class contains attributes specific to its type
+   - UPI → UPI ID
+   - Card → Card number, expiry date
+   - NetBanking → Bank name, account number
+3. Keep attributes private
+4. Provide methods to access data securely
+5. Output: Secure data handling per payment type
