@@ -1,0 +1,18 @@
+Start
+Make an abstract class called Crop
+    Has a name
+    Method getWaterRequirement (to be defined by child)
+    Method getHarvestTime (to be defined by child)
+
+Make class Rice that extends Crop
+    getWaterRequirement → return "High"
+    getHarvestTime → return "120 days"
+
+Make class Wheat that extends Crop
+    getWaterRequirement → return "Medium"
+    getHarvestTime → return "90 days"
+
+In main:
+    Create Rice and Wheat objects
+    Print their water and harvest info
+End
