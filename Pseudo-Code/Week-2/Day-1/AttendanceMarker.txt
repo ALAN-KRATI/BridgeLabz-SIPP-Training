@@ -1,0 +1,11 @@
+Pseudo-code: Attendance Marker
+1. Define 2D array attendance[students][days]
+2. Method markAttendance(student, day, value 'P' or 'A')
+3. Method updateAttendance(student, day, newValue)
+4. Method generateReport(student):
+   - Count 'P' for that student across all days
+   - Return total present days
+5. Example:
+   - Student1 first week: P P A P P P A
+   - Update day 3 from A to P
+   - Report: Present 26 days in month
