@@ -1,0 +1,7 @@
+Pseudo-code for Generics in Transactions
+
+1. Define class Transaction<T>
+2. Allow different data types (UPI, Card, NetBanking) as input
+3. Each instance handles one payment type safely
+4. No need for duplicate code for each payment method
+5. Output: Same class used for multiple transaction modes
