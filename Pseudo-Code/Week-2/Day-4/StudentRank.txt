@@ -1,0 +1,28 @@
+CLASS Student
+    ATTRIBUTES: name, marks
+
+FUNCTION mergeSort(students)
+    IF size <= 1 RETURN students
+    SPLIT into left, right
+    leftSorted = mergeSort(left)
+    rightSorted = mergeSort(right)
+    RETURN merge(leftSorted, rightSorted)
+
+FUNCTION merge(left, right)
+    result = empty list
+    WHILE left and right not empty
+        IF left.marks > right.marks
+            ADD left to result
+        ELSE IF left.marks == right.marks
+            COMPARE names alphabetically
+            ADD smaller name to result
+        ELSE
+            ADD right to result
+    ADD remaining elements
+    RETURN result
+
+MAIN
+    CREATE students: Rahul(88), Aditi(95), Zoya(88), Karan(76), Meera(95), Aarav(92)
+    PRINT "Unsorted List"
+    sortedStudents = mergeSort(students)
+    PRINT "Sorted Rank List" with ranks
