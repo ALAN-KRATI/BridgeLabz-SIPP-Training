@@ -1,0 +1,23 @@
+CLASS Pet
+    ATTRIBUTES: name, species, lastVaccinationDate
+    METHOD checkVaccinationStatus()
+        monthsSinceLast = months_between(today, lastVaccinationDate)
+        IF monthsSinceLast > 12
+            PRINT "Vaccination OVERDUE! Please vaccinate immediately."
+        ELSE IF monthsSinceLast == 11
+            PRINT "Vaccination due in 1 month. Reminder set."
+        ELSE
+            PRINT "Vaccination up-to-date."
+
+CLASS ClinicManager
+    ATTRIBUTES: pets (list of Pet)
+    METHOD registerPet(pet)
+        ADD pet to pets
+        PRINT "Registering Pet: " + pet.name + " | " + pet.species
+        CALL pet.checkVaccinationStatus()
+
+MAIN
+    CREATE ClinicManager
+    REGISTER Pet("Bruno", "Dog", "2024-10-12")
+    REGISTER Pet("Mittens", "Cat", "2023-06-15")
+    REGISTER Pet("Snowy", "Rabbit", "2024-09-10")
