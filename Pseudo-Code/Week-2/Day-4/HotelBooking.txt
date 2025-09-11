@@ -1,0 +1,42 @@
+INTERFACE Promotion<T>
+    METHOD applyDiscount(customer, bookingAmount)
+
+CLASS RegularCustomer { name, loyaltyPoints }
+CLASS PremiumCustomer { name, membershipYears }
+CLASS CorporateCustomer { companyName, employeeCount }
+
+CLASS RegularPromotion IMPLEMENTS Promotion<RegularCustomer>
+    METHOD applyDiscount(customer, amount)
+        discount = 5%
+        IF loyaltyPoints > 100 → +2%
+        RETURN amount - discount
+
+CLASS PremiumPromotion IMPLEMENTS Promotion<PremiumCustomer>
+    METHOD applyDiscount(customer, amount)
+        discount = 15%
+        IF membershipYears > 5 → +5%
+        RETURN amount - discount
+
+CLASS CorporatePromotion IMPLEMENTS Promotion<CorporateCustomer>
+    METHOD applyDiscount(customer, amount)
+        IF employeeCount > 50 → 20% ELSE 10%
+        RETURN amount - discount
+
+CLASS HotelBookingEngine<T>
+    ATTRIBUTES: Promotion<T>
+    METHOD calculateFinalAmount(customer, amount)
+        RETURN promotion.applyDiscount(customer, amount)
+
+MAIN
+    CREATE RegularCustomer(Alice, 120 points)
+    CREATE PremiumCustomer(Bob, 6 years)
+    CREATE CorporateCustomer(TechCorp, 75 employees)
+
+    CREATE HotelBookingEngine with RegularPromotion
+    PRINT final bill for Alice (₹10,000)
+
+    CREATE HotelBookingEngine with PremiumPromotion
+    PRINT final bill for Bob (₹20,000)
+
+    CREATE HotelBookingEngine with CorporatePromotion
+    PRINT final bill for TechCorp (₹50,000)
