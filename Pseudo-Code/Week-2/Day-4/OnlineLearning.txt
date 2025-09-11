@@ -1,0 +1,33 @@
+ABSTRACT CLASS Course
+    ATTRIBUTES: title, duration, price, Instructor instructor, Schedule schedule
+    ABSTRACT METHOD conductAssessment()
+
+CLASS ProgrammingCourse EXTENDS Course
+    METHOD conductAssessment()
+        PRINT "Conducting coding challenge on HackerRank..."
+
+CLASS DesignCourse EXTENDS Course
+    METHOD conductAssessment()
+        PRINT "Submit portfolio of 3 app designs."
+
+CLASS BusinessCourse EXTENDS Course
+    METHOD conductAssessment()
+        PRINT "Group case-study presentation scheduled next week."
+
+CLASS Instructor
+    ATTRIBUTES: name, expertise, rating
+
+CLASS Schedule
+    ATTRIBUTES: dayOfWeek, timeSlot, mode
+
+MAIN
+    CREATE Instructor Rajeev("Java Expert"), Ananya("UX Designer"), Arvind("Business Analyst")
+    CREATE Schedule1("Monday", "7–9 PM", "Live")
+    CREATE Schedule2("Flexible", "-", "Recorded")
+    CREATE Schedule3("Friday", "6–8 PM", "Live")
+
+    CREATE ProgrammingCourse(Java Mastery, Rajeev, Schedule1)
+    CREATE DesignCourse(UX Design Fundamentals, Ananya, Schedule2)
+    CREATE BusinessCourse(Business Strategy 101, Arvind, Schedule3)
+
+    CALL conductAssessment() on each course
